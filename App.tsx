@@ -1,31 +1,39 @@
-import { View ,Text, StyleSheet} from "react-native"
 // import { Header } from "react-native/Libraries/NewAppScreen"
-import Header from "./component/header"
+// import Header from "./component/header"
+import * as React from 'react';
+import { Provider as PaperProvider } from 'react-native-paper';
+// import { SafeAreaProvider } from 'react-native-safe-area-context';
+// import MainScreen from './src/MainScreen.jsx'; // Your main screen/component
+// import ProductList from "./component/apiproducts.jsx";
+import ProductLists from "./component/paper.jsx"
+
 
 const App = () => {
   return(
-    <View style={{flex:1, justifyContent:'center', alignItems:'center',backgroundColor:'white'}}>  
-      <Text>
-        Hello World
-      </Text>
-      <Text style={styles.text}>
-        Hello World
-      </Text>
-      <Header />
-    </View>
+    <>
+    {/* <Header /> */}
+    {/* <SafeAreaProvider>
+      <PaperProvider >
+        <MainScreen />
+      </PaperProvider>
+    </SafeAreaProvider> */}
+    {/* <ProductList/> */}
+    <PaperProvider>
+      <ProductLists/>
+    </PaperProvider>
+    
+    </>
+  
     
   )
 }
-const styles =StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'blue'
-  },
-  text:{
-    color:'green',
-    fontSize:20
-  }
-})
+// const theme = {
+//   ...DefaultTheme,
+//   colors: {
+//     ...DefaultTheme.colors,
+//     primary: '#6200ee',
+//     secondary: '#03dac6',
+//   },
+// };
+
 export default App
